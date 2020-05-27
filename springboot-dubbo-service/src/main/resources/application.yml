@@ -1,0 +1,62 @@
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.example.dubbo.entity
+  global-config:
+    db-config:
+      id-type: id_worker
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  datasource:
+    druid:
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      max-wait: 60000
+      min-evictable-idle-time-millis: 30000
+      max-evictable-idle-time-millis: 30000
+      time-between-eviction-runs-millis: 60000
+      validation-query: select 'x'
+      validation-query-timeout: -1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      pool-prepared-statements: true
+      share-prepared-statements: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.25.20:3306/hdw_dubbo?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=GMT%2B8
+      username: root
+      password: hadoop
+  application:
+    name: microservice-provider
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  application:
+    name: springboot-dubbo-demo #应用名
+  registry:
+    address: zookeeper://127.0.0.1:2181 #zookeeper地址
+  #   port: 2181 #提供注册的端口
+  protocol:
+    name: dubbo
+    port: 20880 #dubbo服务暴露的端口
+  scan:
+    base-packages: com.example.dubbo.service #扫描的包名
