@@ -18,6 +18,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public String getUsername() {
-        return "董傻逼！！！！！！！！！";
+        return "大帅比！！！！！！！！！";
     }
 }

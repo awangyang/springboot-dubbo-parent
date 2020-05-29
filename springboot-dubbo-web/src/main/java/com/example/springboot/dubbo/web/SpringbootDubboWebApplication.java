@@ -1,4 +1,4 @@
-package com.example.springbootdubboweb;
+package com.example.springboot.dubbo.web;
 
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;

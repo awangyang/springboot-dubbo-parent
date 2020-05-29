@@ -1,7 +1,8 @@
-package com.example.springbootdubboweb.controller;
+package com.example.springboot.dubbo.web.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.example.dubbo.dto.ResultDTO;
 import com.example.dubbo.entity.User;
 import com.example.dubbo.service.IUserService;
 import org.apache.dubbo.config.annotation.Reference;
@@ -21,11 +22,12 @@ public class UserController {
 
 
     @GetMapping("/index")
-    public String getUsername() {
+    public ResultDTO getUsername() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", "manager");
 
         System.out.println(userService.getById(3));
-        return userService.getUsername();
+        //System.out.println(userService.list(queryWrapper));
+        return ResultDTO.success(userService.getUsername());
     }
 }

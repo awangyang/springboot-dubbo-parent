@@ -1,4 +1,4 @@
-package com.example.springbootdubboweb;
+package com.example.springboot.dubbo.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
