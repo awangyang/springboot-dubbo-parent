@@ -1,6 +1,6 @@
 package com.example.dubbo.mapper;
 
-import com.example.dubbo.entity.TSysUser;
+import com.example.dubbo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2020-04-14
  */
 @Repository
-public interface TSysUserMapper extends BaseMapper<TSysUser> {
+public interface UserMapper extends BaseMapper<User> {
 
 }
