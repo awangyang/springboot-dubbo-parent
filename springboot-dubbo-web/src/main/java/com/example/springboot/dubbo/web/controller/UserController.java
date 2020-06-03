@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description:
- * @author: WangYang
- * @date: 2019-08-03 17:21:35
+ * @author WangYang
+ * @date 2019-08-03 17:21:35
  */
 @RestController
 public class UserController {
