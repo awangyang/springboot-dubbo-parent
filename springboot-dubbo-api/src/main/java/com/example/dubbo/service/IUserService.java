@@ -10,5 +10,5 @@ import com.example.dubbo.entity.User;
  */
 public interface IUserService extends IService<User> {
 
-    String getUsername();
+    User getUsername(String username);
 }
